@@ -108,7 +108,7 @@ const Contact = () => {
         <div className="rounded-md overflow-hidden flex flex-col md:flex-row">
           <div className="left-container w-full md:w-[60%] relative">
             <img
-              src="./contactformbg1.jpg"
+              src="./contactformbg.jpg"
               alt="Contact Us"
               className="w-full h-[0px] md:h-full object-cover"
             />
