@@ -13,15 +13,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Left Section: Logo */}
           <div className="flex-shrink-0">
-            
-              <NavLink to="/" className="text-3xl font-medium flex">
-                <img
-                  src="./logo.png"
-                  alt="logo"
-                  className="h-10 w-auto object-contain mr-1"
-                />
-                <span>Dad The Ad</span>
-              </NavLink>
+            <NavLink to="/" className="text-3xl font-medium flex">
+              <img
+                src="./logo.png"
+                alt="logo"
+                className="h-10 w-auto object-contain mr-1"
+              />
+              <span>Dad The Ad</span>
+            </NavLink>
           </div>
 
           {/* Right Section: Links */}
@@ -45,10 +44,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-gray-300 hover:text-white focus:outline-none crusor-pointer"
+              aria-label="Toggle navigation"
             >
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-700">
+        <div className="md:hidden bg-gray-700 absolute top-16 left-0 w-full z-50">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <NavLink
@@ -85,9 +85,10 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "block px-3 py-2 rounded-md text-gray-300 font-bold"
-                    : "block px-3 py-2 rounded-md hover:bg-gray-600"
+                    ? "block px-3 py-2 rounded-md text-yellow-500 font-bold"
+                    : "block px-3 py-2 rounded-md hover:bg-yellow-500"
                 }
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </NavLink>
